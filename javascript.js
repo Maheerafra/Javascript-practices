@@ -2,7 +2,7 @@
 // Your JavaScript goes here!
 console.log("Hello, World!")
 
-let message = 'Hello!'; // define the variable and assign the value
+/*let message = 'Hello!'; // define the variable and assign the value
 console.log('message')
 let admin, name; // can declare two variables at once
 
@@ -27,7 +27,7 @@ const BIRTHDAY = '18.04.1982';
 
 console.log(BIRTHDAY)
 
-let a = 10;
+/*let a = 10;
 
 
 console.log(a)
@@ -64,5 +64,61 @@ true + false = 1
 null + 1 = 1 // (5)
 undefined + 1 = NaN // (6)
 " \t \n" - 2 = -2 // (7)*/
+
+//primitive/value types 
+
+/*let name = 'Afra'; //string literal
+let age = 24;    //number literal
+let isApproved = false; //boolean
+let firstName  =  undefined;//undefined
+let lastName = null;        //null
+
+// console.log(lastName)*/
+
+//javascript is dynamic language
+
+//Reference types
+
+  //object
+let person = {
+    name: 'Afra',
+    age: 24
+};               
+
+//dot notation
+person.age = 40;
+
+console.log(person.age)
+
+//Array
+
+let selectedColors = ['red','blue',];
+selectedColors[2] = 1;
+console.log(selectedColors.length)
+
+  
+
+ //function
+
+// types of function
+
+  //performing a task
+
+ function greet(name, lastName) {
+   console.log('hello ' + name + ' ' + lastName);
+ }
+
+ greet('Afra', 'maheer');
+
+
+//Calculating a value
+ 
+function square(number){
+    return number * number;
+}
+ 
+
+console.log(square(2));
+ 
 
 
