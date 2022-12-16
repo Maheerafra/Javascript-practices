@@ -2,7 +2,7 @@
 // Your JavaScript goes here!
 console.log("Hello, World!")
 
-/*let message = 'Hello!'; // define the variable and assign the value
+let message = 'Hello!'; // define the variable and assign the value
 console.log('message')
 let admin, name; // can declare two variables at once
 
@@ -27,7 +27,7 @@ const BIRTHDAY = '18.04.1982';
 
 console.log(BIRTHDAY)
 
-/*let a = 10;
+let a = 10;
 
 
 console.log(a)
@@ -50,7 +50,7 @@ let x = 1 + (a *= 2);
 console.log(a)
 console.log(x)
 
-/*"" + 1 + 0 = "10"// (1)
+"" + 1 + 0 = "10"// (1)
 "" - 1 + 0 = -1 // (2)
 true + false = 1
 6 / "3" = 2
@@ -63,19 +63,18 @@ true + false = 1
 "  -9  " - 5 = -14 // (4)
 null + 1 = 1 // (5)
 undefined + 1 = NaN // (6)
-" \t \n" - 2 = -2 // (7)*/
+" \t \n" - 2 = -2 // (7)
 
-/
-// console.log(lastName)*/
+// console.log(lastName)
 
 //javascript is dynamic language
 
 //Reference types
 
-  //object
+ // object
 let person = {
-    name: 'Afra',
-    age: 24
+     name: 'Afra',
+     age: 24
 };               
 
 //dot notation
