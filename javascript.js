@@ -1,6 +1,6 @@
 
 // Your JavaScript goes here!
-console.log("Hello, World!")
+/*console.log("Hello, World!")
 
 let message = 'Hello!'; // define the variable and assign the value
 console.log('message')
@@ -11,7 +11,6 @@ name = "John";
 admin = name;
 
 console.log(admin)
-
 
 
 let ourPlanetName = 'earth';
@@ -111,7 +110,53 @@ function square(number){
  
 
 console.log(square(2));
+*/
+
+const string = "The revolution will not be televised.";
+console.log(string);
  
+const badString = string;
+console.log(badString);
+
+// blockquote
+
+const name = "Chris";
+const greeting = `Hello, ${name}`;
+console.log(greeting); // "Hello, Chris"
+
+
+const sauce  = "chicken";
+const order  =  `curry, ${sauce}`;
+console.log(order);
+
+//concatenation
+const one = "Hello, ";
+const two = "how are you?";
+const joined = `${one}${two}`;
+console.log(joined)
+
+//into numbers
+const myString = "123";
+const myNum = Number(myString);
+console.log(typeof myNum);
+
+//into strings
+const myNum2 = 123;
+const myString2 = myNum2.toString();
+console.log(typeof myString2);
+
+
+//expression in strings
+
+const song = "Fight the Youth";
+const score = 9;
+const highestScore = 10;
+//concatenation
+const output = `I like the song ${song}. I gave it a score of ${
+  (score / highestScore) * 100
+}%.`;
+console.log(output);
+
 
 
 
