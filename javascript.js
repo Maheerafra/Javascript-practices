@@ -118,7 +118,7 @@ console.log(string);
 const badString = string;
 console.log(badString);
 
-// blockquote
+// bacckquote
 
 const name = "Chris";
 const greeting = `Hello, ${name}`;
@@ -147,17 +147,28 @@ console.log(typeof myString2);
 
 
 //expression in strings
-
 const song = "Fight the Youth";
 const score = 9;
 const highestScore = 10;
+
 //concatenation
 const output = `I like the song ${song}. I gave it a score of ${
   (score / highestScore) * 100
 }%.`;
 console.log(output);
 
+//STRING METHOD
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+console.log(length);
 
+//extracting string parts
+  slice
+let fruit = "Apple, Banana, Kiwi";
+let part = fruit.slice(7,13);
+console.log(part)
 
-
+  substring
+let str = "Apple, Banana, Kiwi";
+let part = str.substring(7, 13);
 

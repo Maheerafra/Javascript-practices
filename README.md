@@ -34,3 +34,13 @@ The typeof operator allows us to see which type is stored in a variable.
 Usually used as typeof x, but typeof(x) is also possible.
 Returns a string with the name of the type, like "string".
 For null returns "object" – this is an error in the language, it’s not actually an object.
+
+
+Extracting String Parts
+There are 3 methods for extracting a part of a string:
+
+1.slice(start, end)
+2.substring(start, end)
+3.substr(start, length)
+
+
