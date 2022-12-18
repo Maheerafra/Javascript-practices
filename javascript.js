@@ -177,6 +177,7 @@ console.log(newStrng)
   let newMessage = message.replace("Microsoft", "W3Schools");
   console.log(newMessage);
 
+  //Task practices 1
   5 > 4
 "apple" > "pineapple"
 "2" > "12"

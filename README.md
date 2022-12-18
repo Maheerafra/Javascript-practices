@@ -1,7 +1,7 @@
 # Javascript-practices
 
   task practice 1
-  
+
  The addition with a string "" + 1 converts 1 to a string: "" + 1 = "1", and then we have "1" + 0, the same rule is applied.
 The subtraction - (like most math operations) only works with numbers, it converts an empty string "" to 0.
 The addition with a string appends the number 5 to the string.
@@ -95,10 +95,21 @@ The values null and undefined equal == each other and do not equal any other val
 Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
 
 
-5 > 4
-"apple" > "pineapple"
-"2" > "12"
-undefined == null
-undefined === null
-null == "\n0\n"
-null === +"\n0\n"
+task practice 2
+
+5 > 4 → true
+"apple" > "pineapple" → false
+"2" > "12" → true
+undefined == null → true
+undefined === null → false
+null == "\n0\n" → false
+null === +"\n0\n" → false
+
+Obviously, true.
+Dictionary comparison, hence false. "a" is smaller than "p".
+Again, dictionary comparison, first char "2" is greater than the first char "1".
+Values null and undefined equal each other only.
+Strict equality is strict. Different types from both sides lead to false.
+Similar to (4), null only equals undefined.
+Strict equality of different types.
+
