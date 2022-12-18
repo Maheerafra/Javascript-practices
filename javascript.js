@@ -185,3 +185,73 @@ undefined == null
 undefined === null
 null == "\n0\n"
 null === +"\n0\n"
+
+//Conditional Statements
+
+  //IF statement
+if (hour < 18) {
+  greeting = "Good day";
+};
+console.log(greeting);
+
+ //ELSE statement
+ if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+ //IF ELSE statement
+ if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+
+//Logical operators
+
+  //||(OR)
+
+alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false
+
+let hour = 9;
+
+if (hour < 10 || hour > 18) {
+  alert( 'The office is closed.' );
+}
+
+  //&& (AND)
+
+alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+
+let hour = 12;
+let minute = 30;
+
+if (hour == 12 && minute == 30) {
+  alert( 'The time is 12:30' );
+}
+
+ //! (NOT)
+
+alert( !true ); // false
+alert( !0 ); // true
+
+//A double NOT !! is sometimes used for converting a value to boolean type:
+
+alert( !!"non-empty string" ); // true
+alert( !!null ); // false
+
+//There’s a little more verbose way to do the same thing – a built-in Boolean function:
+
+alert( Boolean("non-empty string") ); // true
+alert( Boolean(null) ); // false
+
