@@ -1,4 +1,7 @@
 # Javascript-practices
+
+  task practice 1
+  
  The addition with a string "" + 1 converts 1 to a string: "" + 1 = "1", and then we have "1" + 0, the same rule is applied.
 The subtraction - (like most math operations) only works with numbers, it converts an empty string "" to 0.
 The addition with a string appends the number 5 to the string.
@@ -43,4 +46,59 @@ There are 3 methods for extracting a part of a string:
 2.substring(start, end)
 3.substr(start, length)
 
+    //replace
+Note
+The replace() method does not change the string it is called on.
 
+The replace() method returns a new string.
+
+The replace() method replaces only the first match
+
+If you want to replace all matches, use a regular expression with the /g flag set. See examples below.
+
+By default, the replace() method replaces only the first match:
+
+
+
+ 
+  comparisons
+
+Greater/less than: a > b, a < b.
+Greater/less than or equals: a >= b, a <= b.
+Equals: a == b, please note the double equality sign == means the equality test, while a single one a = b means an assignment.
+Not equals: In maths the notation is ≠, but in JavaScript it’s written as a != b.
+In this article we’ll learn more about different types of comparisons, how JavaScript makes them, including important peculiarities.
+
+At the end you’ll find a good recipe to avoid “JavaScript quirks”-related issues.
+
+Boolean is the result
+All comparison operators return a boolean value:
+
+true – means “yes”, “correct” or “the truth”.
+false – means “no”, “wrong” or “not the truth”.
+
+For boolean values, true becomes 1 and false becomes 0.
+
+The algorithm to compare two strings is simple:
+
+Compare the first character of both strings.
+If the first character from the first string is greater (or less) than the other string’s, then the first string is greater (or less) than the second. We’re done.
+Otherwise, if both strings’ first characters are the same, compare the second characters the same way.
+Repeat until the end of either string.
+If both strings end at the same length, then they are equal. Otherwise, the longer string is greater.
+
+
+Comparison operators return a boolean value.
+Strings are compared letter-by-letter in the “dictionary” order.
+When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+The values null and undefined equal == each other and do not equal any other value.
+Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
+
+
+5 > 4
+"apple" > "pineapple"
+"2" > "12"
+undefined == null
+undefined === null
+null == "\n0\n"
+null === +"\n0\n"

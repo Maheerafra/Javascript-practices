@@ -48,7 +48,7 @@ let x = 1 + (a *= 2);
 
 console.log(a)
 console.log(x)
-
+//task practice1
 "" + 1 + 0 = "10"// (1)
 "" - 1 + 0 = -1 // (2)
 true + false = 1
@@ -163,12 +163,24 @@ let length = text.length;
 console.log(length);
 
 //extracting string parts
-  slice
+  //slice
 let fruit = "Apple, Banana, Kiwi";
 let part = fruit.slice(7,13);
 console.log(part)
 
-  substring
+  //substring
 let str = "Apple, Banana, Kiwi";
-let part = str.substring(7, 13);
+let newStrng = str.substring(7, 13);
+console.log(newStrng)
+  //replace substring
+  let message = "Please visit Microsoft!";
+  let newMessage = message.replace("Microsoft", "W3Schools");
+  console.log(newMessage);
 
+  5 > 4
+"apple" > "pineapple"
+"2" > "12"
+undefined == null
+undefined === null
+null == "\n0\n"
+null === +"\n0\n"
