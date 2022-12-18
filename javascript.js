@@ -118,7 +118,7 @@ console.log(string);
 const badString = string;
 console.log(badString);
 
-// bacckquote
+// backquote
 
 const name = "Chris";
 const greeting = `Hello, ${name}`;
