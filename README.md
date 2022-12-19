@@ -190,6 +190,75 @@ switch (expression) {
 }
 
 
+Conditional branching: if, '?'
+
+Sometimes, we need to perform different actions based on different conditions.
+
+To do that, we can use the if statement and the conditional operator ?, that’s also called a “question mark” operator.
+
+The “if” statement
+The if(...) statement evaluates a condition in parentheses and, if the result is true, executes a block of code.
+
+
+Boolean conversion
+
+The if (…) statement evaluates the expression in its parentheses and converts the result to a boolean.
+
+Let’s recall the conversion rules from the chapter Type Conversions:
+
+A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called “falsy” values.
+Other values become true, so they are called “truthy”.
+
+The “else” clause
+
+The if statement may contain an optional else block. It executes when the condition is falsy.
+
+Several conditions: “else if”
+
+Sometimes, we’d like to test several variants of a condition. The else if clause lets us do that.
+
+Several conditions: “else if”
+
+Sometimes, we’d like to test several variants of a condition. The else if clause lets us do that.
+
+Conditional operator ‘?’
+
+The so-called “conditional” or “question mark” operator lets us do that in a shorter and simpler way.
+
+The operator is represented by a question mark ?. Sometimes it’s called “ternary”, because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+
+The syntax is:
+
+let result = condition ? value1 : value2;
+The condition is evaluated: if it’s truthy then value1 is returned, otherwise – value2.
+
+For example:
+
+let accessAllowed = (age > 18) ? true : false;
+Technically, we can omit the parentheses around age > 18. The question mark operator has a low precedence, so it executes after the comparison >.
+
+This example will do the same thing as the previous one:
+
+// the comparison operator "age > 18" executes first anyway
+// (no need to wrap it into parentheses)
+let accessAllowed = age > 18 ? true : false;
+
+
+Multiple ‘?’
+
+A sequence of question mark operators ? can return a value that depends on more than one condition.
+
+t may be difficult at first to grasp what’s going on. But after a closer look, we can see that it’s just an ordinary sequence of tests:
+
+The first question mark checks whether age < 3.
+If true – it returns 'Hi, baby!'. Otherwise, it continues to the expression after the colon “:”, checking age < 18.
+If that’s true – it returns 'Hello!'. Otherwise, it continues to the expression after the next colon “:”, checking age < 100.
+If that’s true – it returns 'Greetings!'. Otherwise, it continues to the expression after the last colon “:”, returning 'What an unusual age!'.
+
+Non-traditional use of ‘?’
+
+Sometimes the question mark ? is used as a replacement for if:
+
 Logical operators
 
 There are four logical operators in JavaScript: || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing). Here we cover the first three, the ?? operator is in the next article.
