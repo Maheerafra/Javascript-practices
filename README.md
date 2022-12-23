@@ -363,6 +363,145 @@ Returns the inverse value.
 NOTE
 The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||.
 
+FUNCTIONS
+
+1.manipulate text string
+2.manipulate array
+3.generate random number
+
+Functions versus methods
+
+Functions that are part of objects are called methods. You don't need to learn about the inner workings of structured JavaScript objects yet — you can wait until our later module that will teach you all about the inner workings of objects, and how to create your own. For now, we just wanted to clear up any possible confusion of method versus function — you are likely to meet both terms as you look at the available related resources across the Web.
+
+. Anytime you saw a custom name with parentheses straight after it, you were using a custom function
+
+Invoking functions(function declaration)
+
+You are probably clear on this by now, but just in case, to actually use a function after it has been defined, you've got to run — or invoke — it. This is done by including the name of the function in the code somewhere, followed by parentheses.
+
+function myFunction() {
+  alert('hello');
+}
+
+myFunction();
+// calls the function once
+
+Function parameters
+
+Some functions require parameters to be specified when you are invoking them — these are values that need to be included inside the function parentheses, which it needs to do its job properly.
+Parameters are sometimes called arguments, properties, or even attributes.
+
+As an example, the browser's built-in Math.random() function doesn't require any parameters. When called, it always returns a random number between 0 and 1:
+
+const myNumber = Math.random();
+The browser's built-in string replace() function however needs two parameters — the substring to find in the main string, and the substring to replace that string with:
+
+const myText = 'I am a string';
+const newString = myText.replace('string', 'sausage');
+Note: When you need to specify multiple parameters, they are separated by commas.
+
+Optional parameters
+
+Sometimes parameters are optional — you don't have to specify them. If you don't, the function will generally adopt some kind of default behavior. As an example, the array join() function's parameter is optional:
+
+const myArray = ['I', 'love', 'chocolate', 'frogs'];
+const madeAString = myArray.join(' ');
+console.log(madeAString);
+// returns 'I love chocolate frogs'
+
+const madeAnotherString = myArray.join();
+console.log(madeAnotherString);
+// returns 'I,love,chocolate,frogs'
+
+If no parameter is included to specify a joining/delimiting character, a comma is used by default.
+
+Default parameters
+If you're writing a function and want to support optional parameters, you can specify default values by adding = after the name of the parameter, followed by the default value:
+
+function hello(name = 'Chris') {
+  console.log(`Hello ${name}!`);
+}
+
+hello('Ari'); // Hello Ari!
+hello();      // Hello Chris!
+
+Anonymous functions and arrow functions
+So far we have just created a function like so:
+
+function myFunction() {
+  alert('hello');
+}
+But you can also create a function that doesn't have a name:
+
+(function () {
+  alert('hello');
+})
+
+This is called an anonymous function, because it has no name. You'll often see anonymous functions when a function expects to receive another function as a parameter. In this case the function parameter is often passed as an anonymous function.
+
+Note: This form of creating a function is also known as function expression. Unlike function declaration, function expressions are not hoisted.
+
+Anonymous function example
+
+For example, let's say you want to run some code when the user types into a text box. To do this you can call the addEventListener() function of the text box. This function expects you to pass it (at least) two parameters:
+
+the name of the event to listen for, which in this case is keydown
+a function to run when the event happens.
+When the user presses a key, the browser will call the function you provided, and will pass it a parameter containing information about this event, including the particular key that the user pressed:
+
+function logKey(event) {
+  console.log(`You pressed "${event.key}".`);
+}
+
+textBox.addEventListener('keydown', logKey);
+Instead of defining a separate logKey() function, you can pass an anonymous function into addEventListener():
+
+textBox.addEventListener('keydown', function(event) {
+  console.log(`You pressed "${event.key}".`);
+});
+
+Arrow functions
+
+If you pass an anonymous function like this, there's an alternative form you can use, called an arrow function. Instead of function(event), you write (event) =>:
+
+textBox.addEventListener('keydown', (event) => {
+  console.log(`You pressed "${event.key}".`);
+});
+
+If the function only has one line in the curly brackets, you omit the curly brackets:
+
+textBox.addEventListener('keydown', (event) => console.log(`You pressed "${event.key}".`));
+
+If the function only takes one parameter, you can also omit the brackets around the parameter:
+
+textBox.addEventListener('keydown', event => console.log(`You pressed "${event.key}".`));
+
+Finally, if your function needs to return a value, and contains only one line, you can also omit the return statement. In the following example we're using the map() method of Array to double every value in the original array:
+
+const originals = [1, 2, 3];
+
+const doubled = originals.map((item) => item * 2);
+
+console.log(doubled); // [2, 4, 6]
+
+The map() method takes each item in the array in turn, passing it into the given function. It then takes the value returned by that function and adds it to a new array.
+
+So in the example above, (item) => item * 2 is the arrow function equivalent of:
+
+function doubleItem(item) {
+  return item * 2;
+}
+N/B
+There are some subtle differences between arrow functions and normal functions. They're outside the scope of this introductory guide, and are unlikely to make a difference in the cases we've discussed here.
+
+Function scope and conflicts
+
+Let's talk a bit about scope — a very important concept when dealing with functions. When you create a function, the variables and other things defined inside the function are inside their own separate scope, meaning that they are locked away in their own separate compartments, unreachable from code outside the functions.
+
+The top level outside all your functions is called the global scope. Values defined in the global scope are accessible from everywhere in the code.
+
+JavaScript is set up like this for various reasons — but mainly because of security and organization. Sometimes you don't want variables to be accessible from everywhere in the code — external scripts that you call in from elsewhere could start to mess with your code and cause problems because they happen to be using the same variable names as other parts of the code, causing conflicts. This might be done maliciously, or just by accident.
+
 
 
 

@@ -367,3 +367,39 @@ alert( !!null ); // false
 alert( Boolean("non-empty string") ); // true
 alert( Boolean(null) ); // false
 
+function myFunction() {
+  alert('hello');
+}
+
+//functions
+
+//every time we manipulate a text string
+const myText = 'I am a string';
+const newString = myText.replace('string', 'sausage');
+console.log(newString);
+
+//every time we manipulate array
+const myArray = ['I', 'love', 'chocolate', 'frogs'];
+const madeAString = myArray.join(' ');
+console.log(madeAString);
+
+//every time we generate a random number:
+const myNumber = Math.random();
+
+// FUNCTION SCOPE AND CONFLICTS
+
+const x = 1;
+
+function a() {
+  const y = 2;
+}
+
+function b() {
+  const z = 3;
+}
+
+function output(value) {
+  const para = document.createElement('p');
+  document.body.appendChild(para);
+  para.textContent = `Value: ${value}`;
+}
