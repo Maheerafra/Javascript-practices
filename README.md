@@ -502,6 +502,128 @@ The top level outside all your functions is called the global scope. Values defi
 
 JavaScript is set up like this for various reasons — but mainly because of security and organization. Sometimes you don't want variables to be accessible from everywhere in the code — external scripts that you call in from elsewhere could start to mess with your code and cause problems because they happen to be using the same variable names as other parts of the code, causing conflicts. This might be done maliciously, or just by accident.
 
+What are return values?
+
+Return values are just what they sound like — the values that a function returns when it completes. You've already met return values several times, although you may not have thought about them explicitly.
+
+const myText = "The weather is cold";
+const newString = myText.replace("cold", "warm");
+console.log(newString); // Should print "The weather is warm"
+// the replace() string function takes a string,
+// replaces one substring with another, and returns
+// a new string with the replacement made
+
+The replace() function is invoked on the myText string, and is passed two parameters:
+
+the substring to find ('cold').
+the string to replace it with ('warm').
+When the function completes (finishes running), it returns a value, which is a new string with the replacement made. In the code above, the result of this return value is saved in the variable newString.
+
+A function declaration looks like this:
+
+function name(parameters, delimited, by, comma) {
+  /* code */
+}
+Values passed to a function as parameters are copied to its local variables.
+A function may access outer variables. But it works only from inside out. The code outside of the function doesn’t see its local variables.
+A function can return a value. If it doesn’t, then its result is undefined.
+To make the code clean and easy to understand, it’s recommended to use mainly local variables and parameters in the function, not outer variables.
+
+It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side effect.
+
+Function naming:
+
+A name should clearly describe what the function does. When we see a function call in the code, a good name instantly gives us an understanding what it does and returns.
+A function is an action, so function names are usually verbal.
+There exist many well-known function prefixes like create…, show…, get…, check… and so on. Use them to hint what a function does.
+Functions are the main building blocks of scripts. Now we’ve covered the basics, so we actually can start creating and using them. But that’s only the beginning of the path. We are going to return to them many times, going more deeply into their advanced features.
 
 
+April 14, 2022
+Arrow functions, the basics
+There’s another very simple and concise syntax for creating functions, that’s often better than Function Expressions.
 
+It’s called “arrow functions”, because it looks like this:
+
+let func = (arg1, arg2, ..., argN) => expression;
+This creates a function func that accepts arguments arg1..argN, then evaluates the expression on the right side with their use and returns its result.
+
+In other words, it’s the shorter version of:
+
+let func = function(arg1, arg2, ..., argN) {
+  return expression;
+};
+Let’s see a concrete example:
+
+let sum = (a, b) => a + b;
+
+/* This arrow function is a shorter form of:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+alert( sum(1, 2) ); // 3
+As you can see, (a, b) => a + b means a function that accepts two arguments named a and b. Upon the execution, it evaluates the expression a + b and returns the result.
+
+If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
+
+For example:
+
+let double = n => n * 2;
+// roughly the same as: let double = function(n) { return n * 2 }
+
+alert( double(3) ); // 6
+If there are no arguments, parentheses are empty, but they must be present:
+
+let sayHi = () => alert("Hello!");
+
+sayHi();
+Arrow functions can be used in the same way as Function Expressions.
+
+For instance, to dynamically create a function:
+
+let age = prompt("What is your age?", 18);
+
+let welcome = (age < 18) ?
+  () => alert('Hello!') :
+  () => alert("Greetings!");
+
+welcome();
+Arrow functions may appear unfamiliar and not very readable at first, but that quickly changes as the eyes get used to the structure.
+
+They are very convenient for simple one-line actions, when we’re just too lazy to write many words.
+
+Multiline arrow functions
+The arrow functions that we’ve seen so far were very simple. They took arguments from the left of =>, evaluated and returned the right-side expression with them.
+
+Sometimes we need a more complex function, with multiple expressions and statements. In that case, we can enclose them in curly braces. The major difference is that curly braces require a return within them to return a value (just like a regular function does).
+
+Like this:
+
+let sum = (a, b) => {  // the curly brace opens a multiline function
+  let result = a + b;
+  return result; // if we use curly braces, then we need an explicit "return"
+};
+
+alert( sum(1, 2) ); // 3
+More to come
+Here we praised arrow functions for brevity. But that’s not all!
+
+Arrow functions have other interesting features.
+
+To study them in-depth, we first need to get to know some other aspects of JavaScript, so we’ll return to arrow functions later in the chapter Arrow functions revisited.
+
+For now, we can already use arrow functions for one-line actions and callbacks.
+
+Summary
+Arrow functions are handy for simple actions, especially for one-liners. They come in two flavors:
+
+Without curly braces: (...args) => expression – the right side is an expression: the function evaluates it and returns the result. Parentheses can be omitted, if there’s only a single argument, e.g. n => n*2.
+With curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
+
+Arrow functions are handy for simple actions, especially for one-liners. They come in two flavors:
+
+Without curly braces: (...args) => expression – the right side is an expression: the function evaluates it and returns the result. Parentheses can be omitted, if there’s only a single argument, e.g. n => n*2.
+With curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
